@@ -10,6 +10,10 @@
     width: 100%;
   }
   
+  .icons_font{
+     font-size: 27px;
+  }
+
   /*Inicio de Estilos Letrero de Bienvenida*/
   .welcome_sign {
     text-align: center;
@@ -44,3 +48,4 @@
   .bg-light{
       background-color: yellow;
   }
+
