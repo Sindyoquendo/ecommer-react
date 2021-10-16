@@ -21,9 +21,7 @@ const Product = ({ price, name,  descripcion,stock, CustomButton }) => {
           <Button variant="light btnLight" onClick= {Add}> +  {CustomButton}</Button>
           <div className= "count-cart">{count}</div>
           <Button variant="light btnLight" onClick= {subtract}> - {CustomButton}</Button>
-          <div>
-          <Button> +++</Button>
-          </div>
+          <Button variant="light btnLight"> Agregar al Carro</Button>
           </div>
         </div>
         <hr />
