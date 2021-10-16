@@ -1,39 +1,52 @@
 import { useState } from "react";
-import './App.css';
 import NavBar from './components/NavBar';
 import Product from "./components/Product";
 import { Modal,Button  } from "react-bootstrap";
 import ItemListContainer from "./layouts/item-list-container/ItemListContainer";
+import Count from "./components/itemCount";
+//import FuncComponent from "./components/funcional-components/funcionalComponents";  <FuncComponent/> 
+import CustomButton from "./components/button-custom/buttonCustom";
+import './App.css';
 
 
-
-function App() { 
- 
+function App() {  
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
  
   const product = [
-    { name: "Short", price: 1000 },
-    { name: "Camisa de Playa", price: 1200 },
-    { name: "Enteriza", price: 1200 },
-    
+    { name: "Short", price: 1000, descripcion:"Short de tricot con Lycra. Cintura elástica de 2 cm. Disponible en tallas de 1 a 6 años.", stock:2,},    
+    { name: "Camisa de Playa", price: 1200, descripcion:"Camisa de playa de tricot con Lycra y protección Uv.Manga ¾. Cuello alto. Disponible en tallas de 1 a 6 años.", stock:2},
+    {name: "Enteriza Volados Cuadros", price: 1200,  descripcion: "Malla enteriza de tricot con Lycra y espalda cruzada. Forro interno. Disponible en tallas de 1 a 3 años.", stock:2},
+       
   ];
  
+  const [name, setName] = useState("");
+  const handleClickButton = (add) => setName(name);
+
+
   return (
     <>
   <div className="App">
      <NavBar/>
      <ItemListContainer greeting="Gracias por visitar Pancho y Aurelia">
+       <Count/>
+      <CustomButton action={() => handleClickButton (name)}
+              className="parent-button"
+              color="yellow"
+              name="Botón 1"
+              />
      
      <hr/>
      <Button variant="btn btn-secondary" onClick={handleShow}>
        Dale click para ver tus referidos!!!
      </Button>
      <hr/>
-     {product.map(({ name, price }) => (
-     <Product key={name} name={name} price={price} />
+     {product.map(({ name, price, descripcion,stock, CustomButton}) => (
+     <Product key={name} name={name} price={price} descripcion={descripcion} stock={stock} button={CustomButton}/>
+     
      ))}
+     
      </ItemListContainer>
   </div>
   

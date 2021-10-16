@@ -1,0 +1,21 @@
+.count{
+    background-color: #FAEBD7;
+    margin-left: 500px;
+    margin-right: 500px;
+  
+}
+
+.cart-button{
+    display: inline-flex;
+    font-size: 30px;
+}
+
+.btnLight{
+    background-color: #FAEBD7;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.count-cart{
+    align-items: center;
+}
