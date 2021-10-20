@@ -14,9 +14,9 @@ function App() {
   const handleShow = () => setShow(true);
  
   const product = [
-    { name: "Short", price: 1000, descripcion:"Short de tricot con Lycra. Cintura elástica de 2 cm. Disponible en tallas de 1 a 6 años.", stock: 10,},    
-    { name: "Camisa de Playa", price: 1200, descripcion:"Camisa de playa de tricot con Lycra y protección Uv.Manga ¾. Cuello alto. Disponible en tallas de 1 a 6 años.", stock:9},
-    {name: "Enteriza Volados Cuadros", price: 1200,  descripcion: "Malla enteriza de tricot con Lycra y espalda cruzada. Forro interno. Disponible en tallas de 1 a 3 años.", stock:3},
+    { id: 1, name: "Short", price: 1000, descripcion:"Short de tricot con Lycra. Cintura elástica de 2 cm. Disponible en tallas de 1 a 6 años.", stock: 10,},    
+    { id: 2, name: "Camisa de Playa", price: 1200, descripcion:"Camisa de playa de tricot con Lycra y protección Uv.Manga ¾. Cuello alto. Disponible en tallas de 1 a 6 años.", stock:9},
+    {id: 3, name: "Enteriza Volados Cuadros", price: 1200,  descripcion: "Malla enteriza de tricot con Lycra y espalda cruzada. Forro interno. Disponible en tallas de 1 a 3 años.", stock:3},
   ];
   
   return (
@@ -29,8 +29,8 @@ function App() {
       Dale click para ver tus referidos!!!
      </Button>
      <hr/>
-     {product.map(({ name, price, descripcion,stock }) => (
-     <Product key={name} name={name} price={price} descripcion={descripcion} stock={stock} />
+     {product.map(({ id, name, price, descripcion,stock }) => (
+     <Product key={name} id= {id} name={name} price={price} descripcion={descripcion} stock={stock} />
      ))}
      </ItemListContainer>
   </div>

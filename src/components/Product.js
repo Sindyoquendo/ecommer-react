@@ -2,21 +2,24 @@ import  {useState} from "react";
 import { Button  } from "react-bootstrap";
 import "./itemCount.css";
 
-const Product = ({ price, name, descripcion, stock}) => {
 
+
+
+const Product = ({ id,price, name, descripcion, stock}) => {
+   
   const [count, setCount] = useState (0);  
   const Add = () =>setCount (count +1);
   const subtract= () =>setCount (count -1);
   const agregar = ()=> setCount (0);
-  
-  
+ 
   return (
-      <>      
-        <div>
+      <>   
+          <div>
+          <h3>id={id}</h3>
           <h2>Nombre: {name}</h2>
           <h3>Precio: {price}</h3>   
           <h5>Descripción:{descripcion}</h5>
-          <h5>stock:{stock}</h5>          
+          <h5>stock:{stock}</h5>         
           <div className="cart-button">
           <p>Cantidad</p>
           <Button variant="light btnLight" onClick= {Add}>+</Button>
@@ -29,6 +32,5 @@ const Product = ({ price, name, descripcion, stock}) => {
         <hr />
       </>
     );
-  };
-   
+  };   
   export default Product;
